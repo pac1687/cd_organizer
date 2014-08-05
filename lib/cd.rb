@@ -1,12 +1,18 @@
 class CD
   attr_reader(:artist, :album)
-    @@organizer = []
+  @@organizer = []
+
+  def CD.all
+    @@organizer
+  end
 
   def initialize(attributes)
     @artist = attributes[:artist]
     @album = attributes[:album]
   end
 
-  def CD.all
-    @@organizer
+  def cd_add
+    @@organizer << self
+  end
 end
+
